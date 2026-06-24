@@ -12,4 +12,10 @@ if (!url || !key) {
 
 export const supabase = createClient(url ?? "", key ?? "", {
   auth: { persistSession: false, autoRefreshToken: false },
+  // IMPORTANT (Next.js App Router): forcer no-store, sinon Next met en cache les
+  // requêtes GET internes de supabase-js → données périmées en production (Vercel).
+  global: {
+    fetch: (input: RequestInfo | URL, init?: RequestInit) =>
+      fetch(input, { ...init, cache: "no-store" }),
+  },
 });
