@@ -3,6 +3,7 @@ import { runClientTurn } from "@/lib/agents/clientAgent";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+export const maxDuration = 60;
 
 // Un tour de conversation côté prospect (EF3/EF5/EF6/EF8).
 export async function POST(req: Request) {

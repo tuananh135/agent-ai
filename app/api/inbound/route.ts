@@ -5,6 +5,7 @@ import type { InboundRequest } from "@/lib/types";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+export const maxDuration = 60; // les tours LLM (surtout l'évaluation Opus) peuvent dépasser le défaut Vercel
 
 // EF1 — tiếp nhận một yêu cầu đến (đã chuẩn hóa) và khởi động luồng xử lý.
 export async function POST(req: Request) {

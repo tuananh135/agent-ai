@@ -4,6 +4,7 @@ import { ensureSeeded } from "@/lib/seed";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+export const maxDuration = 60;
 
 // EF2/EF7 — l'agent immobilier pilote par conversation. Le front envoie l'historique.
 export async function POST(req: Request) {
